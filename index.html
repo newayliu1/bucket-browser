@@ -12,14 +12,90 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>Example</h1>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+      <div class="header">
+          <span>LOGO</span>
+          <div class="button-holder" id="waiting-options">
+            <div class="btn-group"> <!-- SIGN IN-->
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Sign In
+              </button>
+                <form class="dropdown-menu dropdown-menu-right" id="sign-in">
+                  <fieldset>
+                    <div class="input">
+                      <label class="email">
+                      Username
+                      <input class="email-sign-in" type="text" name="credentials[email]">
+                    </label>
+                  </div>
+                    <div class="input">
+                      <label class="password">
+                      Password
+                      <input class="pass-sign-in" type="password" name="credentials[password]">
+                    </label>
+                  </div>
+                    <p class="sign-in-message"></p>
+                    <input class="close-dropdown" type="submit" name="submit" value="Sign in!">
+                </fieldset>
+              </form>
+            </div>
+            <div class="btn-group"> <!-- SIGN UP-->
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Sign Up
+              </button>
+              <form class="dropdown-menu dropdown-menu-right" id="sign-up">
+                <fieldset>
+                  <div class="input">
+                    <label class="email">
+                    Username
+                    <input class="email-sign-up"
+                    type="text" name="credentials[email]">
+                    </label>
+                  </div>
+                  <div class="input">
+                    <label class="password">
+                    Password
+                    <input class="password-sign-up" type="password" name="credentials[password]">
+                    </label>
+                  </div>
+                  <div class="input">
+                    <label class="password_confirmation">
+                    Password Confirmation
+                    <input class="password-confirmation-sign-up" type="password" name="credentials[password_confirmation]">
+                    </label>
+                  </div>
+                    <p class="sign-up-message"></p>
+                  <input class="close-dropdown" type="submit" name="submit" value="Sign up!">
+                </fieldset>
+              </form>
+            </div>
+          </div>
+          <div class="button-holder hidden" id="logged-in-options">
+            <div class="btn-group"> <!-- CHANGE PASSWORD AND SIGN OUT-->
+              <button type="button" class="btn btn-default dropdown-toggle logged-in-name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              </button>
+                <form class="dropdown-menu dropdown-menu-right" id="change-password">
+                  <fieldset>
+                    <div class="input">
+                      <label>
+                      Current Password
+                      <input class="current-password-change" type="password" name="passwords[old]">
+                    </label>
+                  </div>
+                    <div class="input">
+                      <label>
+                      New Password
+                      <input class="new-password-change" type="password" name="passwords[new]">
+                    </label>
+                  </div>
+                    <p class="change-pw-message"></p>
+                    <input class="close-dropdown" type="submit" name="submit" value="Change Password!">
+                  </fieldset>
+                  <hr>
+                  <p class="sign-out-message"></p>
+                  <button class="btn btn-default sign-out-button" value="input" type="submit" name="submit" id="sign-out">Sign Out</button>
+                </form>
+            </div>
+          </div>
+        </div>
     </body>
 </html>
