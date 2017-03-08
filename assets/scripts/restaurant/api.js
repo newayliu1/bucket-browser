@@ -13,6 +13,17 @@ const createRestaurant = function (data) {
   });
 };
 
+const listRestaurant = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/restaurants',
+    method: 'GET',
+    headers: {
+      Authorization: `Token token=${store.user.token}`,
+    },
+  });
+};
+
 module.exports = {
   createRestaurant,
+  listRestaurant,
 };

@@ -21,9 +21,21 @@ const onCreateRest = (event) =>{
     .catch(ui.failure);
 };
 
+const onListRest = (event) =>{
+  event.preventDefault();
+
+  api.listRestaurant()
+    .then((response) => {
+      console.log('list response is', response);
+    })
+    .then(ui.success)
+    .catch(ui.failure);
+};
+
 
 const addHandlers = () => {
   $('#create-restaurant').on('submit', onCreateRest);
+  $('#restaurant-lister').on('click', onListRest);
 };
 
 module.exports = {
