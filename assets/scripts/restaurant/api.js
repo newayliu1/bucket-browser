@@ -23,7 +23,30 @@ const listRestaurant = function () {
   });
 };
 
+const deleteRestaurant = function(id){
+  return $.ajax({
+    url: config.apiOrigin + '/restaurants/' +id,
+    method: 'DELETE',
+    headers: {
+      Authorization: `Token token=${store.user.token}`,
+    },
+  });
+};
+
+const updateRestaurant = function(data, id) {
+  return $.ajax({
+      url: config.apiOrigin + '/restaurants/' + id,
+      method: 'PATCH',
+      headers: {
+        Authorization: `Token token=${store.user.token}`,
+      },
+      data,
+    });
+};
+
 module.exports = {
   createRestaurant,
   listRestaurant,
+  deleteRestaurant,
+  updateRestaurant
 };
