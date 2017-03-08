@@ -1,0 +1,13 @@
+{{#each restaurants as |restaurant|}}
+  <div>
+    <div class="restaurant-selectable" data-id="{{restaurant.id}}">
+      <p class="restaurant-name-style">{{restaurant.name}}</p>
+    </div>
+    <div class="restaurant-check-icon" data-id="{{restaurant.id}}">
+      <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+    </div>
+    <div class="restaurant-trash-icon" data-id="{{restaurant.id}}">
+      <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+    </div>
+  </div>
+{{/each}}

@@ -26,9 +26,11 @@ const onListRest = (event) =>{
 
   api.listRestaurant()
     .then((response) => {
-      console.log('list response is', response);
+      store.restaurants = response.restaurants;
+      console.log(store);
+      return store;
     })
-    .then(ui.success)
+    .then(ui.displayRestforUser)
     .catch(ui.failure);
 };
 
