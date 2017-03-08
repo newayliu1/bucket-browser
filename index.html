@@ -12,7 +12,7 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <div class="header">
+      <header>
           <span>LOGO</span>
           <div class="button-holder" id="waiting-options">
             <div class="btn-group"> <!-- SIGN IN-->
@@ -96,6 +96,16 @@
                 </form>
             </div>
           </div>
-        </div>
+        </header>
+        <aside>
+          <form id="create-restaurant">
+            <input type="text" name="restaurant[name]" placeholder="restaurant name">
+            <input type="text" name="restaurant[location]" placeholder="restaurant location">
+            <input type="text" name="restaurant[type]" placeholder="restaurant type">
+            <input type="submit" name="submit" value="Create">
+          </form>
+        </aside>
+        <section>
+        </section>
     </body>
 </html>
