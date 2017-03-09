@@ -9,10 +9,11 @@ const displayRestforUser = (data) => {
   let html = restaurantList({restaurants: data.restaurants});
   $('.restaurant-list').append(html); // add the list of restaurants that the user has
 
-  // $('.restaurant-check-icon').click(function() {
-  //   let id = this.getAttribute('data-id');
-  //   events.updateRest(id);
-  // });
+  $('.restaurant-check-icon').click(function() {
+    let id = this.getAttribute('data-id');
+    console.log(events);
+    events.achievedRest(id);
+  });
 
   $('.restaurant-trash-icon').click(function() {
     let id = this.getAttribute('data-id');

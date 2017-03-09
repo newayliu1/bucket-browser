@@ -1,6 +1,7 @@
 'use strict';
 
 const store = require('../store');
+const restEvents = require('../restaurant/events.js');
 
 const signInSuccess = (data) => {
   // these remove text from input fields and messages when successfully submitted
@@ -19,7 +20,6 @@ const signInSuccess = (data) => {
   $("#logged-in-options").removeClass('hidden');
   $("#user-logged-in").removeClass('hidden');
   $('.logged-in-name').text(store.user.email);
-
 };
 
 const signInFailure = (error) => {
