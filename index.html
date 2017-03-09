@@ -1,124 +1,130 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags unless you know what you are doing -->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags unless you know what you are doing -->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body class="container-fluid">
-      <header>
-          <span>LOGO</span>
-          <div class="button-holder" id="waiting-options">
-            <div class="btn-group"> <!-- SIGN IN-->
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <!-- Do not add `link` tags unless you know what you are doing -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags unless you know what you are doing -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body class="container-fluid">
+  <header>
+    <span>LOGO</span>
+    <div class="button-holder" id="waiting-options">
+      <div class="btn-group">
+        <!-- SIGN IN-->
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Sign In
               </button>
-                <form class="dropdown-menu dropdown-menu-right" id="sign-in">
-                  <fieldset>
-                    <div class="input">
-                      <label class="email">
+        <form class="dropdown-menu dropdown-menu-right" id="sign-in">
+          <fieldset>
+            <div class="input">
+              <label class="email">
                       Username
                       <input class="email-sign-in" type="text" name="credentials[email]">
                     </label>
-                  </div>
-                    <div class="input">
-                      <label class="password">
+            </div>
+            <div class="input">
+              <label class="password">
                       Password
                       <input class="pass-sign-in" type="password" name="credentials[password]">
                     </label>
-                  </div>
-                    <p class="sign-in-message"></p>
-                    <input class="close-dropdown" type="submit" name="submit" value="Sign in!">
-                </fieldset>
-              </form>
             </div>
-            <div class="btn-group"> <!-- SIGN UP-->
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <p class="sign-in-message"></p>
+            <input class="close-dropdown" type="submit" name="submit" value="Sign in!">
+          </fieldset>
+        </form>
+      </div>
+      <div class="btn-group">
+        <!-- SIGN UP-->
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Sign Up
               </button>
-              <form class="dropdown-menu dropdown-menu-right" id="sign-up">
-                <fieldset>
-                  <div class="input">
-                    <label class="email">
+        <form class="dropdown-menu dropdown-menu-right" id="sign-up">
+          <fieldset>
+            <div class="input">
+              <label class="email">
                     Username
                     <input class="email-sign-up"
                     type="text" name="credentials[email]">
                     </label>
-                  </div>
-                  <div class="input">
-                    <label class="password">
+            </div>
+            <div class="input">
+              <label class="password">
                     Password
                     <input class="password-sign-up" type="password" name="credentials[password]">
                     </label>
-                  </div>
-                  <div class="input">
-                    <label class="password_confirmation">
+            </div>
+            <div class="input">
+              <label class="password_confirmation">
                     Password Confirmation
                     <input class="password-confirmation-sign-up" type="password" name="credentials[password_confirmation]">
                     </label>
-                  </div>
-                    <p class="sign-up-message"></p>
-                  <input class="close-dropdown" type="submit" name="submit" value="Sign up!">
-                </fieldset>
-              </form>
             </div>
-          </div>
-          <div class="button-holder hidden" id="logged-in-options">
-            <div class="btn-group"> <!-- CHANGE PASSWORD AND SIGN OUT-->
-              <button type="button" class="btn btn-default dropdown-toggle logged-in-name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <p class="sign-up-message"></p>
+            <input class="close-dropdown" type="submit" name="submit" value="Sign up!">
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <div class="button-holder hidden" id="logged-in-options">
+      <div class="btn-group">
+        <!-- CHANGE PASSWORD AND SIGN OUT-->
+        <button type="button" class="btn btn-default dropdown-toggle logged-in-name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               </button>
-                <form class="dropdown-menu dropdown-menu-right" id="change-password">
-                  <fieldset>
-                    <div class="input">
-                      <label>
+        <form class="dropdown-menu dropdown-menu-right" id="change-password">
+          <fieldset>
+            <div class="input">
+              <label>
                       Current Password
                       <input class="current-password-change" type="password" name="passwords[old]">
                     </label>
-                  </div>
-                    <div class="input">
-                      <label>
+            </div>
+            <div class="input">
+              <label>
                       New Password
                       <input class="new-password-change" type="password" name="passwords[new]">
                     </label>
-                  </div>
-                    <p class="change-pw-message"></p>
-                    <input class="close-dropdown" type="submit" name="submit" value="Change Password!">
-                  </fieldset>
-                  <hr>
-                  <p class="sign-out-message"></p>
-                  <button class="btn btn-default sign-out-button" value="input" type="submit" name="submit" id="sign-out">Sign Out</button>
-                </form>
             </div>
-          </div>
-        </header>
-        <aside>
-          <form id="create-restaurant">
-            <input type="text" name="restaurant[name]" placeholder="restaurant name">
-            <input type="text" name="restaurant[location]" placeholder="restaurant location">
-            <input type="text" name="restaurant[type]" placeholder="restaurant type">
-            <input type="submit" name="submit" value="Create">
-          </form>
-          <div class="restaurant-list-holder">
-            <button id="restaurant-lister">Unvisited Restaurant List</button>
-            <div class="restaurant-list">
-            </div>
-          </div>
-        </aside>
-        <section>
-        </section>
-        <div class="map">
-          <div id="map">
-            <script src="/assets/scripts/maps/mapinit.js"></script>
-<script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZ0_kQ56P2uibaCsMRXADbk1e25BgloPA&callback=initMap">
-</script>
-          </div>
-        </div>
-    </body>
+            <p class="change-pw-message"></p>
+            <input class="close-dropdown" type="submit" name="submit" value="Change Password!">
+          </fieldset>
+          <hr>
+          <p class="sign-out-message"></p>
+          <button class="btn btn-default sign-out-button" value="input" type="submit" name="submit" id="sign-out">Sign Out</button>
+        </form>
+      </div>
+    </div>
+  </header>
+  <aside>
+    <form id="create-restaurant">
+      <input type="text" name="restaurant[name]" placeholder="restaurant name">
+      <input type="text" name="restaurant[location]" placeholder="restaurant location">
+      <input type="text" name="restaurant[type]" placeholder="restaurant type">
+      <input type="submit" name="submit" value="Create">
+    </form>
+    <div class="restaurant-list-holder">
+      <button id="restaurant-lister">Unvisited Restaurant List</button>
+      <div class="restaurant-list">
+      </div>
+    </div>
+  </aside>
+  <section>
+  </section>
+  <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+  <div class="map">
+    <div id="map">
+      <script src="/assets/scripts/maps/mapinit.js"></script>
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZ0_kQ56P2uibaCsMRXADbk1e25BgloPA&libraries=places&callback=initAutocomplete">
+      </script>
+    </div>
+  </div>
+</body>
+
 </html>
