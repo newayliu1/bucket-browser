@@ -22,7 +22,9 @@ const onCreateRest = (event) =>{
 };
 
 const onListRest = (event) =>{
-  event.preventDefault();
+  if (event !== undefined) {
+    event.preventDefault();
+  }
 
   api.listRestaurant()
     .then((response) => {
@@ -34,12 +36,21 @@ const onListRest = (event) =>{
     .catch(ui.failure);
 };
 
+const deleteRest = (id) => {
+  api.deleteRestaurant(id)
+    .then(onListRest);
+};
+
 
 const addHandlers = () => {
   $('#create-restaurant').on('submit', onCreateRest);
   $('#restaurant-lister').on('click', onListRest);
+  $('.restaurant-trash-icon').on('click', deleteRest);
 };
 
 module.exports = {
   addHandlers,
+  onCreateRest,
+  onListRest,
+  deleteRest
 };
