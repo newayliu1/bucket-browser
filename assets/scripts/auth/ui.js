@@ -20,6 +20,9 @@ const signInSuccess = (data) => {
   $("#logged-in-options").removeClass('hidden');
   $("#user-logged-in").removeClass('hidden');
   $('.logged-in-name').text(store.user.email);
+
+  // need to call restaurant.events.onListRest()
+  restEvents.onListRest();
 };
 
 const signInFailure = (error) => {
