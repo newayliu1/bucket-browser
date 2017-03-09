@@ -2,10 +2,16 @@
   <div>
     <div class="restaurant-selectable" data-id="{{restaurant.id}}">
       <p class="restaurant-name-style">{{restaurant.name}}</p>
+      <p class="restaurant-location-style">{{restaurant.location}}</p>
+      <p class="restaurant-type-style">{{restaurant.type}}</p>
     </div>
+    {{#if restaurant.achieved}}
+    <p>Visited!</p>
+    {{else}}
     <div class="restaurant-check-icon" data-id="{{restaurant.id}}">
       <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
     </div>
+    {{/if}}
     <div class="restaurant-trash-icon" data-id="{{restaurant.id}}">
       <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
     </div>
