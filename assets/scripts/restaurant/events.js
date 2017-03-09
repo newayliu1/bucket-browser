@@ -7,20 +7,6 @@ const ui = require('./ui');
 
 const store = require('../store');
 
-
-const onCreateRest = (event) =>{
-  event.preventDefault();
-  let data = getFormFields(event.target);
-
-  api.createRestaurant(data)
-    .then((response) => {
-      console.log('create response is', response);
-      // store.restaurant = response.restaurant; // restaurant is created is now saved
-    })
-    .then(onListRest)
-    .catch(ui.failure);
-};
-
 const onListRest = (event) =>{
   if (event !== undefined) {
     event.preventDefault();
@@ -33,6 +19,19 @@ const onListRest = (event) =>{
       return store;
     })
     .then(ui.displayRestforUser)
+    .catch(ui.failure);
+};
+
+const onCreateRest = (event) =>{
+  event.preventDefault();
+  let data = getFormFields(event.target);
+
+  api.createRestaurant(data)
+    .then((response) => {
+      console.log('create response is', response);
+      // store.restaurant = response.restaurant; // restaurant is created is now saved
+    })
+    .then(onListRest)
     .catch(ui.failure);
 };
 
