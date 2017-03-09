@@ -72,3 +72,7 @@ function initAutocomplete() {
     map.fitBounds(bounds);
   });
 }
+
+// module.exports = {
+//   initAutocomplete,
+// };
