@@ -9,8 +9,12 @@
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
   <!-- Do not add `script` tags unless you know what you are doing -->
+  <script src="/assets/scripts/maps/mapinit.js" type="text/javascript" charset="utf-8" defer></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuUyzdjIojmxQq__y6KpgJuiJBRgOh3uc&libraries=places&callback=initAutocomplete">
+  </script>
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
 </head>
 
 <body class="container-fluid">
@@ -118,9 +122,6 @@
  <input id="pac-input" class="controls" type="text" placeholder="Search Box">
   <div class="map">
     <div id="map">
-      <script src="/assets/scripts/maps/mapinit.js"></script>
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZ0_kQ56P2uibaCsMRXADbk1e25BgloPA&libraries=places&callback=initAutocomplete">
-      </script>
     </div>
   </div>
 </body>
