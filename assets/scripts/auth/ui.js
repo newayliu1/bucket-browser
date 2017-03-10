@@ -21,6 +21,9 @@ const signInSuccess = (data) => {
   $("#user-logged-in").removeClass('hidden');
   $('.logged-in-name').text(store.user.email);
 
+  // reveal the user's restaurant list
+  $(".restaurant-wrapper").removeClass('hidden');
+
   // need to call restaurant.events.onListRest()
   restEvents.onListRest();
 };
@@ -79,6 +82,11 @@ const signOutSuccess = (data) => {
   $("#user-logged-in").addClass('hidden');
   $('.logged-in-name').text("");
 
+  // empty the logged-out user's restaurant list
+  $('.restaurant-list').empty(); // empty in case it had already been requested
+
+  // hide the user's restaurant list
+  $(".restaurant-wrapper").addClass('hidden');
 
 };
 
