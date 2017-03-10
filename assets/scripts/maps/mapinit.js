@@ -1,6 +1,6 @@
 'use strict';
 
-window.initAutocomplete = function() {
+function initAutocomplete() {
   let uluru = {
     lat: 42.364506,
     lng: -71.038887
