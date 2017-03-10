@@ -25,13 +25,14 @@ const onListRest = (event) =>{
 const onCreateRest = (event) =>{
   event.preventDefault();
   let data = getFormFields(event.target);
-
+  console.log(data);
   api.createRestaurant(data)
     .then((response) => {
       console.log('create response is', response);
       // store.restaurant = response.restaurant; // restaurant is created is now saved
     })
     .then(onListRest)
+    .then(ui.success)
     .catch(ui.failure);
 };
 

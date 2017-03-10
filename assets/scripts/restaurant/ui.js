@@ -23,8 +23,8 @@ const displayRestforUser = (data) => {
 
 };
 
-const success = function (data){
-  console.log(data);
+const success = function (){
+  $('.restaurants-input').val('');
 };
 
 const failure = function (error){
