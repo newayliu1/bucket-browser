@@ -9,7 +9,7 @@ module.exports = {
       application: './index.js',
       specs: './spec/_all.js',
       vendor: ['jquery', 'bootstrap-sass'],
-      maps: './assets/scripts/maps/mapinit.js',
+      maps: './assets/mapinit.js',
     },
 
     output: {
