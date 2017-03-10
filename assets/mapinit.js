@@ -53,7 +53,7 @@ window.initAutocomplete = function() {
     marker.setVisible(true);
 
     infowindowContent.children['place-name'].textContent = place.name;
-    infowindowContent.children['place-id'].textContent = place.place_id;
+    // infowindowContent.children['place-id'].textContent = place.place_id;
     infowindowContent.children['place-address'].textContent =
       place.formatted_address;
     infowindow.open(map, marker);

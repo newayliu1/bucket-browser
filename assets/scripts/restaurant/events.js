@@ -58,6 +58,7 @@ const addHandlers = () => {
   $('#create-restaurant').on('submit', onCreateRest);
   $('#restaurant-lister').on('click', onListRest);
   $('.restaurant-trash-icon').on('click', deleteRest);
+
 };
 
 module.exports = {
