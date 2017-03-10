@@ -9,12 +9,15 @@
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
   <!-- Do not add `script` tags unless you know what you are doing -->
-
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALTwxXelJj0w0e6LbB_6iIUbFrMYC24oE&libraries=places&callback=initAutocomplete">
-  </script>
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-  <script src="assets/mapinit.js"></script>
+
+  <!-- turned mapinit file into a webpack.js file change required to deploy -->
+  <!-- it looks like we don't have direct access to the assets file when deployed so having a direct link wasn't working whereas requiring in webpack converts the file to something we can access (see line 12 in grunt/webpack.js) -->
+  <script src="public/map.js" type="text/javascript" charset="utf-8" defer></script>
+  <!-- removed async - it was causing issues since google was faster than our other scripts-->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQH-PgOVbBG9npURHAb48XrdZQlRIxFhE&libraries=places&callback=initAutocomplete" defer>
+  </script>
 </head>
 
 <body class="container-fluid">
