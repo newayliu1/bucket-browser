@@ -1,18 +1,18 @@
 'use strict';
 
 window.initAutocomplete = function () {
-  let uluru = {
+  let defaultPosition = {
     lat: 42.364506,
     lng: -71.038887
   };
   let map = new google.maps.Map(document.getElementById('map'), {
     zoom: 12,
-    center: uluru
+    center: defaultPosition
   });
-  let marker = new google.maps.Marker({
-    position: uluru,
-    map: map
-  });
+  // let marker = new google.maps.Marker({
+  //   position: defaultPosition,
+  //   map: map
+  // });
 
   // creates the search box and links it to UI
   let input = document.getElementById('pac-input');
