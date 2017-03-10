@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Example</title>
+  <title>FeedBucket</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Do not add `link` tags unless you know what you are doing -->
@@ -16,63 +16,59 @@
   <!-- it looks like we don't have direct access to the assets file when deployed so having a direct link wasn't working whereas requiring in webpack converts the file to something we can access (see line 12 in grunt/webpack.js) -->
   <script src="public/maps.js" type="text/javascript" charset="utf-8" defer></script>
   <!-- removed async - it was causing issues since google was faster than our other scripts-->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQH-PgOVbBG9npURHAb48XrdZQlRIxFhE&libraries=places&callback=initAutocomplete" defer>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0Bn2w4Dj6XlMxYy-wk-2IQ8l65P7ibpE&libraries=places&callback=initAutocomplete" defer>
   </script>
 </head>
 
 <body class="container-fluid">
   <header>
-    <span>LOGO</span>
+    <img src="./assets/bucketlogo.svg" alt="FeedBucket Logo" class="logo-image">
+    <div class="title-image">
+      <img src="" alt="FeedBucket" class="title-image">
+    </div>
     <div class="button-holder" id="waiting-options">
-      <div class="btn-group">
-        <!-- SIGN IN-->
-        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Sign In
-              </button>
+      <!-- SIGN IN-->
+      <div class="btn-group sign-in-dropdown">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sign In
+        </button>
         <form class="dropdown-menu dropdown-menu-right" id="sign-in">
           <fieldset>
             <div class="input">
-              <label class="email">
-                      Username
-                      <input class="email-sign-in" type="text" name="credentials[email]">
-                    </label>
+              <label class="email">Username
+                <input class="email-sign-in" type="text" name="credentials[email]">
+              </label>
             </div>
             <div class="input">
-              <label class="password">
-                      Password
-                      <input class="pass-sign-in" type="password" name="credentials[password]">
-                    </label>
+              <label class="password">Password
+                <input class="pass-sign-in" type="password" name="credentials[password]">
+              </label>
             </div>
             <p class="sign-in-message"></p>
             <input class="close-dropdown" type="submit" name="submit" value="Sign in!">
           </fieldset>
         </form>
       </div>
-      <div class="btn-group">
-        <!-- SIGN UP-->
-        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Sign Up
-              </button>
+      <!-- SIGN UP-->
+      <div class="btn-group sign-up-dropdown">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sign Up
+        </button>
         <form class="dropdown-menu dropdown-menu-right" id="sign-up">
           <fieldset>
             <div class="input">
-              <label class="email">
-                    Username
-                    <input class="email-sign-up"
-                    type="text" name="credentials[email]">
-                    </label>
+              <label class="email">Username
+                <input class="email-sign-up"
+                type="text" name="credentials[email]">
+              </label>
             </div>
             <div class="input">
-              <label class="password">
-                    Password
-                    <input class="password-sign-up" type="password" name="credentials[password]">
-                    </label>
+              <label class="password">Password
+                <input class="password-sign-up" type="password" name="credentials[password]">
+              </label>
             </div>
             <div class="input">
-              <label class="password_confirmation">
-                    Password Confirmation
-                    <input class="password-confirmation-sign-up" type="password" name="credentials[password_confirmation]">
-                    </label>
+              <label class="password_confirmation">Password Confirmation
+                <input class="password-confirmation-sign-up" type="password" name="credentials[password_confirmation]">
+              </label>
             </div>
             <p class="sign-up-message"></p>
             <input class="close-dropdown" type="submit" name="submit" value="Sign up!">
@@ -81,35 +77,39 @@
       </div>
     </div>
     <div class="button-holder hidden" id="logged-in-options">
-      <div class="btn-group">
-        <!-- CHANGE PASSWORD AND SIGN OUT-->
+      <!-- CHANGE PASSWORD AND SIGN OUT-->
+      <div class="btn-group chg-pw-sign-out-dropdown">
         <button type="button" class="btn btn-default dropdown-toggle logged-in-name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              </button>
+        </button>
         <form class="dropdown-menu dropdown-menu-right" id="change-password">
           <fieldset>
             <div class="input">
-              <label>
-                      Current Password
-                      <input class="current-password-change" type="password" name="passwords[old]">
-                    </label>
+              <label>Current Password
+                <input class="current-password-change" type="password" name="passwords[old]">
+              </label>
             </div>
             <div class="input">
-              <label>
-                      New Password
-                      <input class="new-password-change" type="password" name="passwords[new]">
-                    </label>
+              <label>New Password
+                <input class="new-password-change" type="password" name="passwords[new]">
+              </label>
             </div>
             <p class="change-pw-message"></p>
             <input class="close-dropdown" type="submit" name="submit" value="Change Password!">
           </fieldset>
           <hr>
           <p class="sign-out-message"></p>
-          <button class="btn btn-default sign-out-button" value="input" type="submit" name="submit" id="sign-out">Sign Out</button>
+          <button class="btn btn-default sign-out-button" value="input" type="submit" name="submit" id="sign-out">Sign Out
+          </button>
         </form>
       </div>
     </div>
   </header>
-  <aside>
+  <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+    <div class="map">
+      <div id="map">
+      </div>
+    </div>
+  <div class="restaurant-wrapper hidden">
     <form id="create-restaurant">
       <input type="text" name="restaurant[name]" placeholder="restaurant name">
       <input type="text" name="restaurant[location]" placeholder="restaurant location">
@@ -117,15 +117,10 @@
       <input type="submit" name="submit" value="Create">
     </form>
     <div class="restaurant-list-holder">
-      <button id="restaurant-lister">Unvisited Restaurant List</button>
       <div class="restaurant-list">
       </div>
     </div>
-
- <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-  <div class="map">
-    <div id="map">
-    </div>
   </div>
 </body>
+
 </html>

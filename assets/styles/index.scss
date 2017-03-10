@@ -1,16 +1,47 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+$main-color: #fe7443;
+$accent-color: #aaa7a3;
+$off-white: #f6f6f6;
+$dark-color: #333;
+
+.container-fluid {
+  margin: 0 auto;
+  padding: 0;
+}
+
 .button-holder {
   float: right;
 }
 
-#map {
-  height: 500px;
+header {
+  background-color: $off-white;
+  margin: 0 auto;
+  padding: 0;
 }
 
-.map {
+.logo-image, .title-image {
+  display: inline;
+}
+
+.logo-image {
+  height: 100px;
+}
+
+#map {
+  border: 4px solid $off-white;
+  float: left;
   height: 500px;
-  margin: 0;
+  margin: 8px;
   padding: 0;
+  width: 40%;
+}
+
+.restaurant-wrapper {
+  float: left;
+  height: 500px;
+  margin: 8px;
+  padding: 0;
+  width: 40%;
 }
