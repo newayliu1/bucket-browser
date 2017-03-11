@@ -9,6 +9,7 @@ const getDataFromMaps = function(event) {
   // $('#restaurantAddress').val('');
   $('#restaurantName').val(place.name);
   $('#restaurantAddress').val(place.address);
+  console.log($('#place-address'));
 };
 
 const addHandlers = function () {
