@@ -14,8 +14,8 @@ $dark-color: #333;
 header {
   background-color: $off-white;
   background-image: url('../buckettitle.svg');
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
   height: 100px;
   margin: 0 auto;
   padding: 0;
@@ -23,8 +23,8 @@ header {
 }
 
 .logo-image {
-  float: left;
   display: inline;
+  float: left;
   margin: 0;
   max-height: 100px;
   padding: 0;
@@ -36,7 +36,7 @@ header {
 }
 
 #map {
-  border: 8px solid $off-white;
+  border: 8px solid $accent-color;
   float: left;
   height: 500px;
   margin: 16px;
@@ -50,4 +50,66 @@ header {
   margin: 8px;
   padding: 0;
   width: 45%;
+}
+
+.pending {
+  background-color: $off-white;
+  border: 4px solid $accent-color;
+  float: left;
+  height: 150px;
+  margin: 4px;
+  padding: 4px;
+  overflow-x: scroll;
+  width: 150px;
+
+  div {
+    min-height: 16px;
+  }
+
+  .restaurant-check-icon {
+    float: left;
+  }
+
+  .restaurant-trash-icon {
+    float: right;
+  }
+
+  .restaurant-selectable {
+    clear: both;
+  }
+
+  p {
+    min-height: 20px;
+  }
+}
+
+.visited {
+  background-color: $off-white;
+  border: 4px solid $main-color;
+  float: left;
+  height: 150px;
+  margin: 4px;
+  padding: 4px;
+  overflow-x: scroll;
+  width: 150px;
+
+  div {
+    min-height: 20px;
+  }
+
+  .restaurant-check-icon {
+    float: left;
+  }
+
+  .restaurant-trash-icon {
+    float: right;
+  }
+
+  .restaurant-selectable {
+    clear: both;
+  }
+
+  p {
+    min-height: 20px;
+  }
 }
