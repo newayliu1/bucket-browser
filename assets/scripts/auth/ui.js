@@ -21,6 +21,9 @@ const signInSuccess = (data) => {
   $("#user-logged-in").removeClass('hidden');
   $('.logged-in-name').text(store.user.email);
 
+  // hide the landing image div
+  $(".landing-image").addClass('hidden');
+
   // reveal the user's restaurant list
   $(".restaurant-wrapper").removeClass('hidden');
 
@@ -92,7 +95,8 @@ const signOutSuccess = (data) => {
   $('.restaurants-input').val('');
   $('.save-restaurant-message').text("");
 
-
+  // show the landing image div
+  $(".landing-image").removeClass('hidden');
 
 };
 

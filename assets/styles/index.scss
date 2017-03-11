@@ -22,6 +22,21 @@ header {
   width: 100%;
 }
 
+
+.landing-image {
+  border: 8px solid $accent-color;
+  background-image: url('https://raw.githubusercontent.com/Squad-SOL/bucket-browser/master/assets/bucketlanding.png');
+  background-size: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  float: left;
+  height: 500px;
+  margin: 16px;
+  padding: 0;
+  width: 45%;
+  min-width: 300px;
+}
+
 .logo {
   display: inline;
   float: left;
