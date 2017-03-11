@@ -25,6 +25,7 @@ window.initAutocomplete = function() {
   });
   let markers = [];
   let marker;
+  let rate = {};
 
   // Set up a pop up window for markers
   let infowindow = new google.maps.InfoWindow();
@@ -61,14 +62,13 @@ window.initAutocomplete = function() {
       //   anchor: new google.maps.Point(17, 34),
       //   scaledSize: new google.maps.Size(25, 25)
       // };
-
       // Create a marker for each place.
       markers.push(new google.maps.Marker({
         map: map,
         // icon: icon,
         title: place.name,
         position: place.geometry.location,
-        address: place
+        placeInfo: place
       }));
 
       if (place.geometry.viewport) {
@@ -79,7 +79,7 @@ window.initAutocomplete = function() {
       }
       map.fitBounds(bounds);
     });
-// Add click handler for all the markers
+    // Add click handler for all the markers
     markers.forEach((marker) => {
       marker.addListener('click', function() {
         infowindow.open(map, marker);
@@ -89,7 +89,10 @@ window.initAutocomplete = function() {
         infowindowContent.children['place-name'].textContent = marker.title;
         // infowindowContent.children['place-id'].textContent = place.place_id;
         infowindowContent.children['place-address'].textContent =
-          marker.address.formatted_address;
+          marker.placeInfo.formatted_address;
+        //showing price level and rating
+        infowindowContent.children['rating'].textContent = marker.placeInfo.rating?`Rating: ${marker.placeInfo.rating}`:'';
+        infowindowContent.children['price-rating'].textContent = marker.placeInfo.price_level?`Price Level: ${marker.placeInfo.price_level}`:'';
       });
 
     });
