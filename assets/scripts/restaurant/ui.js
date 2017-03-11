@@ -25,10 +25,11 @@ const displayRestforUser = (data) => {
 
 const success = function (){
   $('.restaurants-input').val('');
+  $('.save-restaurant-message').text("");
 };
 
 const failure = function (error){
-  console.log(error);
+  $('.save-restaurant-message').text("Sorry, please fill in all fields.");
 };
 
 module.exports = {

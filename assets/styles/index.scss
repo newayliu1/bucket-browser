@@ -45,6 +45,10 @@ header {
   min-width: 300px;
 }
 
+#pac-input {
+  width: 300px;
+}
+
 .restaurant-wrapper {
   float: left;
   height: 500px;
@@ -60,8 +64,12 @@ header {
 
 .restaurant-form {
   float: left;
-  height: 200px;
+  height: 180px;
   margin: 4px;
+}
+
+.restaurant-form-holder {
+  height: 215px;
 }
 
 .restaurant-input-field {
@@ -73,6 +81,10 @@ header {
 }
 
 .restaurant-list-holder {
+  clear: both;
+}
+
+.save-restaurant-message {
   clear: both;
 }
 
