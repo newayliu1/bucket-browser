@@ -11,31 +11,37 @@ $dark-color: #333;
   padding: 0;
 }
 
+header {
+  background-color: $off-white;
+  background-image: url('../buckettitle.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100px;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+.logo-image {
+  float: left;
+  display: inline;
+  margin: 0;
+  max-height: 100px;
+  padding: 0;
+  width: 80px;
+}
+
 .button-holder {
   float: right;
 }
 
-header {
-  background-color: $off-white;
-  margin: 0 auto;
-  padding: 0;
-}
-
-.logo-image, .title-image {
-  display: inline;
-}
-
-.logo-image {
-  height: 100px;
-}
-
 #map {
-  border: 4px solid $off-white;
+  border: 8px solid $off-white;
   float: left;
   height: 500px;
-  margin: 8px;
+  margin: 16px;
   padding: 0;
-  width: 40%;
+  width: 45%;
 }
 
 .restaurant-wrapper {
@@ -43,5 +49,5 @@ header {
   height: 500px;
   margin: 8px;
   padding: 0;
-  width: 40%;
+  width: 45%;
 }
