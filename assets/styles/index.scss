@@ -1,6 +1,5 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
-
 $main-color: #fe7443;
 $accent-color: #aaa7a3;
 $off-white: #f6f6f6;
@@ -64,7 +63,14 @@ header {
 }
 
 #pac-input {
-  width: 300px;
+  font-family: Roboto;
+  font-size: 15px;
+  height: 25px;
+  width: 225px;
+}
+
+.title {
+  font-weight: bold;
 }
 
 .restaurant-wrapper {
