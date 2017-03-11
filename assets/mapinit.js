@@ -14,49 +14,84 @@ window.initAutocomplete = function() {
   //   map: map
   // });
 
+  // creates the search box and links it to UI
   let input = document.getElementById('pac-input');
-
-  let autocomplete = new google.maps.places.Autocomplete(input);
-  autocomplete.bindTo('bounds', map);
-
+  let searchBox = new google.maps.places.SearchBox(input);
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
+  // Bias the SearchBox results towards current map's viewport.
+  map.addListener('bounds_changed', function() {
+    searchBox.setBounds(map.getBounds());
+  });
+  let markers = [];
+  let marker;
+
+  // Set up a pop up window for markers
   let infowindow = new google.maps.InfoWindow();
   let infowindowContent = document.getElementById('infowindow-content');
   infowindow.setContent(infowindowContent);
-  let marker = new google.maps.Marker({
-    map: map
-  });
-  marker.addListener('click', function() {
-    infowindow.open(map, marker);
-  });
 
-  autocomplete.addListener('place_changed', function() {
-    infowindow.close();
-    let place = autocomplete.getPlace();
-    if (!place.geometry) {
+
+  // Listen for the event fired when the user selects a prediction and retrieve
+  // more details for that place.
+  searchBox.addListener('places_changed', function() {
+    let places = searchBox.getPlaces();
+    console.log(places);
+    if (places.length == 0) {
       return;
     }
 
-    if (place.geometry.viewport) {
-      map.fitBounds(place.geometry.viewport);
-    } else {
-      map.setCenter(place.geometry.location);
-      map.setZoom(17);
-    }
-
-    // Set the position of the marker using the place ID and location.
-    marker.setPlace({
-      placeId: place.place_id,
-      location: place.geometry.location
+    // Clear out the old markers.
+    markers.forEach(function(marker) {
+      marker.setMap(null);
     });
-    marker.setVisible(true);
+    markers = [];
 
-    infowindowContent.children['place-name'].textContent = place.name;
-    // infowindowContent.children['place-id'].textContent = place.place_id;
-    infowindowContent.children['place-address'].textContent =
-      place.formatted_address;
-    infowindow.open(map, marker);
+    // For each place, get the icon, name and location.
+    let bounds = new google.maps.LatLngBounds();
+    places.forEach(function(place) {
+      if (!place.geometry) {
+        console.log("Returned place contains no geometry");
+        return;
+      }
+      // let icon = {
+      //   url: place.icon,
+      //   size: new google.maps.Size(71, 71),
+      //   origin: new google.maps.Point(0, 0),
+      //   anchor: new google.maps.Point(17, 34),
+      //   scaledSize: new google.maps.Size(25, 25)
+      // };
+
+      // Create a marker for each place.
+      markers.push(new google.maps.Marker({
+        map: map,
+        // icon: icon,
+        title: place.name,
+        position: place.geometry.location,
+        address: place
+      }));
+
+      if (place.geometry.viewport) {
+        // Only geocodes have viewport.
+        bounds.union(place.geometry.viewport);
+      } else {
+        bounds.extend(place.geometry.location);
+      }
+      map.fitBounds(bounds);
+    });
+// Add click handler for all the markers
+    markers.forEach((marker) => {
+      marker.addListener('click', function() {
+        infowindow.open(map, marker);
+
+        marker.setVisible(true);
+
+        infowindowContent.children['place-name'].textContent = marker.title;
+        // infowindowContent.children['place-id'].textContent = place.place_id;
+        infowindowContent.children['place-address'].textContent =
+          marker.address.formatted_address;
+      });
+
+    });
   });
-
 };
