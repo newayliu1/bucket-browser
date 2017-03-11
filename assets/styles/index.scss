@@ -34,7 +34,7 @@ header {
   margin: 16px;
   padding: 0;
   width: 45%;
-  min-width: 300px;
+  min-width: 315px;
 }
 
 .logo {
@@ -60,14 +60,12 @@ header {
   margin: 16px;
   padding: 0;
   width: 45%;
-  min-width: 300px;
+  min-width: 315px;
 }
 
 #pac-input {
   width: 300px;
 }
-
-
 
 .restaurant-wrapper {
   border: 8px solid $accent-color;
@@ -76,7 +74,7 @@ header {
   margin: 16px;
   padding: 0;
   width: 45%;
-  min-width: 300px;
+  min-width: 315px;
 }
 
 .how-to-image {
@@ -91,26 +89,36 @@ header {
 
 .restaurant-form-holder {
   height: 50%;
+  margin: 0 auto;
 }
-
 
 .restaurant-form {
   float: left;
-  margin: 4px;
-}
+  margin: 2px;
+  width: 145px;
 
+  .restaurants-input {
+    width: 140px;
+  }
+}
 
 .create-button {
   margin-top: 6px;
 }
 
 .get-from-map-button {
+  margin: 2px;
   margin-bottom: 4px;
 }
 
-.restaurant-input-field {
-  max-width: 175px;
-}
+// .restaurant-input-field {
+//   margin: 2px;
+//   width: 145px;
+//
+//   .restaurants-input {
+//     width: 140px;
+//   }
+// }
 
 .save-restaurant-message {
   clear: both;
