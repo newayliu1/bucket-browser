@@ -88,6 +88,12 @@ const signOutSuccess = (data) => {
   // hide the user's restaurant list
   $(".restaurant-wrapper").addClass('hidden');
 
+  // clear save restaurant inputs and/or error message on sign-out
+  $('.restaurants-input').val('');
+  $('.save-restaurant-message').text("");
+
+
+
 };
 
 const signOutFailure = (error) => {

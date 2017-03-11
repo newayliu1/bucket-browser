@@ -22,9 +22,10 @@
 
 <body class="container-fluid">
   <header>
-    <img src="./assets/bucketlogo.svg" alt="FeedBucket Logo" class="logo-image">
-    <div class="title-image">
-      <img src="" alt="FeedBucket" class="title-image">
+
+    <div class="logo-image">
+    <img src="./assets/bucketlogo.svg" alt="FeedBucket Logo">
+      <!-- <img src="./assets/buckettitle.svg" alt="FeedBucket" class="title-image"> -->
     </div>
     <div class="button-holder" id="waiting-options">
       <!-- SIGN IN-->
@@ -110,14 +111,37 @@
      </div>
 
   <div class="restaurant-wrapper hidden">
-    <form id="create-restaurant">
-      <button class="getDataFromMaps" name="Get from Map">Get from Map</button>
-      <input class= "restaurants-input" id="restaurantName" type="text" name="restaurant[name]" placeholder="restaurant name">
-      <input class= "restaurants-input" id="restaurantAddress" type="text" name="restaurant[location]" placeholder="restaurant location">
-      <input class= "restaurants-input" type="text" name="restaurant[type]" placeholder="restaurant type">
-      <textarea class="form-control restaurants-input" name="restaurant[notes]" placeholder="notes..." rows="3"></textarea>
-      <input type="submit" name="submit" value="Create">
-    </form>
+    <div class="restaurant-form-holder">
+      <form id="create-restaurant">
+        <button class="getDataFromMaps" name="Get from Map">Get from Map</button>
+        <div class="restaurant-form">
+          <div class="restaurant-input-field">
+            <label for="restaurant-name">Restaurant Name:</label>
+            <input class= "restaurants-input" id="restaurantName" type="text" name="restaurant[name]" placeholder="Mom's Place...">
+          </div>
+          <div class="restaurant-input-field">
+            <label for="nrestaurant-location">Location:</label>
+            <input class= "restaurants-input" id="restaurantAddress" type="text" name="restaurant[location]" placeholder="Home...">
+          </div>
+          <div class="restaurant-input-field">
+            <label for="restaurant-type">Type:</label>
+            <input class= "restaurants-input" type="text" name="restaurant[type]" placeholder="Love...">
+          </div>
+          <div class="restaurant-input-field create-button">
+            <input type="submit" name="submit" value="Save to My List!">
+          </div>
+        </div>
+        <div class="restaurant-form">
+          <div class="restaurant-input-field-notes">
+            <label for="restaurant-notes">Notes:</label>
+            <textarea class="form-control restaurants-input" name="restaurant[notes]" placeholder="Recommended by mom..." rows="6"></textarea>
+          </div>
+        </div>
+      </form>
+      <div class="save-restaurant-message-holder">
+        <p class="save-restaurant-message"></p>
+      </div>
+    </div>
     <div class="restaurant-list-holder">
       <div class="restaurant-list">
       </div>

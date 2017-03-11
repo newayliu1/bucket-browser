@@ -2,34 +2,34 @@
 
   {{#if restaurant.achieved}}
   <div class="visited">
+    <div class="visit-message restaurant-check-icon">
+      Visited!
+    </div>
+    <div class="restaurant-trash-icon" data-id="{{restaurant.id}}">
+      <span class="glyphicon glyphicon-trash icon" aria-hidden="true"></span>
+    </div>
     <div class="restaurant-selectable" data-id="{{restaurant.id}}">
       <p class="restaurant-name-style">{{restaurant.name}}</p>
       <p class="restaurant-location-style">{{restaurant.location}}</p>
       <p class="restaurant-type-style">{{restaurant.type}}</p>
       <p class="restaurant-notes-style">{{restaurant.notes}}</p>
-    </div>
-    <div class="visited-message">
-      Visited!
-    </div>
-    <div class="restaurant-trash-icon" data-id="{{restaurant.id}}">
-      <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
     </div>
   </div>
 
   {{else}}
 
   <div class="pending">
+    <div class="restaurant-check-icon" data-id="{{restaurant.id}}">
+      <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+    </div>
+    <div class="restaurant-trash-icon" data-id="{{restaurant.id}}">
+      <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+    </div>
     <div class="restaurant-selectable" data-id="{{restaurant.id}}">
       <p class="restaurant-name-style">{{restaurant.name}}</p>
       <p class="restaurant-location-style">{{restaurant.location}}</p>
       <p class="restaurant-type-style">{{restaurant.type}}</p>
       <p class="restaurant-notes-style">{{restaurant.notes}}</p>
-    </div>
-    <div class="restaurant-check-icon pending" data-id="{{restaurant.id}}">
-      <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
-    </div>
-    <div class="restaurant-trash-icon" data-id="{{restaurant.id}}">
-      <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
     </div>
   </div>
   {{/if}}

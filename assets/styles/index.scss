@@ -11,31 +11,42 @@ $dark-color: #333;
   padding: 0;
 }
 
+header {
+  background-color: $off-white;
+  background-image: url('../buckettitle.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100px;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+.logo-image {
+  display: inline;
+  float: left;
+  margin: 0;
+  max-height: 100px;
+  padding: 0;
+  width: 80px;
+}
+
 .button-holder {
   float: right;
 }
 
-header {
-  background-color: $off-white;
-  margin: 0 auto;
-  padding: 0;
-}
-
-.logo-image, .title-image {
-  display: inline;
-}
-
-.logo-image {
-  height: 100px;
-}
-
 #map {
-  border: 4px solid $off-white;
+  border: 8px solid $accent-color;
   float: left;
   height: 500px;
-  margin: 8px;
+  margin: 16px;
   padding: 0;
-  width: 40%;
+  width: 45%;
+  min-width: 300px;
+}
+
+#pac-input {
+  width: 300px;
 }
 
 .restaurant-wrapper {
@@ -43,5 +54,102 @@ header {
   height: 500px;
   margin: 8px;
   padding: 0;
-  width: 40%;
+  max-width: 45%;
+}
+
+.restaurant-list-holder {
+  border-top: 2px solid $dark-color;
+  padding-top: 4px;
+}
+
+.restaurant-form {
+  float: left;
+  height: 180px;
+  margin: 4px;
+}
+
+.restaurant-form-holder {
+  height: 215px;
+}
+
+.restaurant-input-field {
+  max-width: 175px;
+}
+
+.create-button {
+  margin-top: 4px;
+}
+
+.restaurant-list-holder {
+  clear: both;
+}
+
+.save-restaurant-message {
+  clear: both;
+}
+
+.pending {
+  background-color: $off-white;
+  border: 4px solid $accent-color;
+  float: left;
+  height: 150px;
+  margin: 4px;
+  padding: 4px;
+  overflow-x: scroll;
+  width: 150px;
+
+  div {
+    min-height: 16px;
+  }
+
+  .restaurant-check-icon {
+    float: left;
+  }
+
+  .restaurant-trash-icon {
+    float: right;
+  }
+
+  .restaurant-selectable {
+    clear: both;
+  }
+
+  p {
+    min-height: 20px;
+  }
+}
+
+.visited {
+  background-color: $off-white;
+  border: 4px solid $main-color;
+  float: left;
+  height: 150px;
+  margin: 4px;
+  padding: 4px;
+  overflow-x: scroll;
+  width: 150px;
+
+  div {
+    min-height: 20px;
+  }
+
+  .restaurant-check-icon {
+    float: left;
+  }
+
+  .restaurant-trash-icon {
+    float: right;
+  }
+
+  .restaurant-selectable {
+    clear: both;
+  }
+
+  p {
+    min-height: 20px;
+  }
+}
+
+textarea {
+  resize: none;
 }
