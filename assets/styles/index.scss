@@ -117,12 +117,9 @@ header {
 }
 
 .restaurant-list-holder {
-  // border-top: 2px solid $dark-color;
-  padding-top: 4px;
-}
-
-.restaurant-list-holder {
   clear: both;
+  margin: 16px;
+  padding: 0;
 }
 
 .pending {
