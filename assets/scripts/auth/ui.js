@@ -57,7 +57,7 @@ const signUpSuccess = (data) => {
   $('.password-sign-up').val("");
   $('.password-confirmation-sign-up').val("");
   // this will confirm their sign up was sucessful
-  $('.sign-up-message').text("Thank you for joining! Please log in to start playing");
+  $('.sign-up-message').text("Thank you for joining! Please log in to get started!");
   // choosing NOT to hide the sign up form so user can make another account
 };
 

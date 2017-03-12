@@ -27,7 +27,7 @@ const success = function (){
 };
 
 const failure = function (error){
-  $('.save-restaurant-message').text("Sorry, please fill in all fields.");
+  $('.save-restaurant-message').text("Sorry, please fill in at lease a Name, Location, and Type.");
 };
 
 module.exports = {
