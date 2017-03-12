@@ -1,9 +1,15 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
 $main-color: #fe7443;
 $accent-color: #aaa7a3;
 $off-white: #f6f6f6;
 $dark-color: #333;
+
+body {
+  color: $dark-color;
+  height: 100%;
+}
 
 .container-fluid {
   margin: 0 auto;
@@ -21,12 +27,14 @@ header {
   width: 100%;
 }
 
+
 .landing-image {
-  border: 8px solid $accent-color;
   background-image: url('https://raw.githubusercontent.com/Squad-SOL/bucket-browser/master/assets/bucketlanding.png');
   background-size: 100%;
   background-position: center center;
   background-repeat: no-repeat;
+  border: 8px solid $accent-color;
+
   float: left;
   height: 500px;
   margin: 16px;
@@ -56,32 +64,13 @@ header {
   float: left;
   height: 500px;
   margin: 16px;
+  min-width: 315px;
   padding: 0;
   width: 45%;
-  min-width: 315px;
 }
 
 #pac-input {
-  background-color: #fff;
-  border-radius: 2px;
-  border: 1px solid transparent;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  box-sizing: border-box;
-  font-family: Roboto;
-  font-size: 15px;
-  font-weight: 300;
-  height: 25px;
-  margin-left: 17px;
-  margin-top: 10px;
-  outline: none;
-  padding: 0 11px 0 13px;
-  text-overflow: ellipsis;
   width: 300px;
-}
-
-.title {
-  font-size: 15px;
-  font-weight: bold;
 }
 
 .restaurant-wrapper {
@@ -89,9 +78,9 @@ header {
   float: left;
   height: 500px;
   margin: 16px;
+  min-width: 315px;
   padding: 0;
   width: 45%;
-  min-width: 315px;
 }
 
 .how-to-image {
@@ -124,16 +113,9 @@ header {
 }
 
 .get-from-map-button {
-  margin: 2px 2px 4px;
+  margin: 2px;
+  margin-bottom: 4px;
 }
-// .restaurant-input-field {
-//   margin: 2px;
-//   width: 145px;
-//
-//   .restaurants-input {
-//     width: 140px;
-//   }
-// }
 
 .save-restaurant-message {
   clear: both;
@@ -141,9 +123,11 @@ header {
 }
 
 .restaurant-list-holder {
+  bottom: 22px; // to allow space for footer
   clear: both;
   margin: 16px;
-  padding: 0;
+  padding-top: 16px; // to keep distance from content above this section
+  position: relative; // to use bottom setting above to allow space for footer
 }
 
 .pending {
@@ -178,7 +162,7 @@ header {
   }
 
   .label {
-    color: black;
+    color: $dark-color;
     font-size: 100%;
     font-weight: bold;
     padding: 0;
@@ -217,7 +201,7 @@ header {
   }
 
   .label {
-    color: black;
+    color: $dark-color;
     font-size: 100%;
     font-weight: bold;
     padding: 0;
@@ -226,4 +210,13 @@ header {
 
 textarea {
   resize: none;
+}
+
+footer {
+  background-color: $off-white;
+  bottom: 0; // fixed position at the bottom of the scren
+  height: 20px;
+  position: fixed; // uses the bottom location
+  text-align: center;
+  width: 100%;
 }
