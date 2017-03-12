@@ -1,6 +1,5 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
-
 $main-color: #fe7443;
 $accent-color: #aaa7a3;
 $off-white: #f6f6f6;
@@ -21,7 +20,6 @@ header {
   padding: 0;
   width: 100%;
 }
-
 
 .landing-image {
   border: 8px solid $accent-color;
@@ -64,7 +62,26 @@ header {
 }
 
 #pac-input {
+  background-color: #fff;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  height: 25px;
+  margin-left: 17px;
+  margin-top: 10px;
+  outline: none;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
   width: 300px;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .restaurant-wrapper {
@@ -107,10 +124,8 @@ header {
 }
 
 .get-from-map-button {
-  margin: 2px;
-  margin-bottom: 4px;
+  margin: 2px 2px 4px;
 }
-
 // .restaurant-input-field {
 //   margin: 2px;
 //   width: 145px;
