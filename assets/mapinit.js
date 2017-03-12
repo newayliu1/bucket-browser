@@ -31,7 +31,6 @@ window.initAutocomplete = function() {
   // more details for that place.
   searchBox.addListener('places_changed', function() {
     let places = searchBox.getPlaces();
-    console.log(places);
     if (places.length == 0) {
       return;
     }
@@ -46,7 +45,6 @@ window.initAutocomplete = function() {
     let bounds = new google.maps.LatLngBounds();
     places.forEach(function(place) {
       if (!place.geometry) {
-        console.log("Returned place contains no geometry");
         return;
       }
 

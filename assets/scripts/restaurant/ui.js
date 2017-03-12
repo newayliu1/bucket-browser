@@ -11,13 +11,11 @@ const displayRestforUser = (data) => {
 
   $('.restaurant-check-icon').click(function() {
     let id = this.getAttribute('data-id');
-    console.log(events);
     events.achievedRest(id);
   });
 
   $('.restaurant-trash-icon').click(function() {
     let id = this.getAttribute('data-id');
-    console.log(events);
     events.deleteRest(id);
   });
 
