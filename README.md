@@ -32,9 +32,9 @@ Overall, we had a great learning experience. In 4.5 days we were able to build a
 ## PLAY WITH OUR CODE YOURSELF
 In order to use what we have to play around with it on your own, please download both this repo and the backend repo. In the console we `NPM install` in both repos. In the front end repo we used `grunt serve` and in the backend repo we used `nodemon` for our local servers during the development process.
 
-You will need to get your own Google API keys and set up the authentication to allow for your own development and deployed URLs to use them.
+You will need to get your own Google API key and set up the key authentication to allow for your own development and deployed URLs to use them.
 
-Also, you will need a backend server. We used Heroku. You could create your own and replace the address with yours.
+Also, you will need a backend server. We used Heroku. You can create your own and replace the address with yours.
 
 ## USER STORIES
 * A user wants to sign up/in
@@ -48,9 +48,12 @@ Also, you will need a backend server. We used Heroku. You could create your own 
   * delete a restaurant from their saved list
 
 ## ERD
-![alt text](https://raw.githubusercontent.com/Squad-SOL/bucket-api/readme/ideas_-_12_1024.jpg "ERD")
+![alt text](https://raw.githubusercontent.com/Squad-SOL/bucket-browser/master/ERD.jpg "ERD")
 
 ## WIREFRAME
+![alt text](https://raw.githubusercontent.com/Squad-SOL/bucket-browser/master/Wireframe.jpg "Wireframe")
 
 # THANK YOU!
-Thank you very much for checkout out our app! Please let us know if you have any questions.
+Don't forget to try it out here: https://squad-sol.github.io/bucket-browser/
+
+Thank you very much for checking out our app! Please let us know if you have any questions!
