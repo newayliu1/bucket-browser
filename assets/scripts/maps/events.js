@@ -5,8 +5,6 @@ const getDataFromMaps = function(event) {
   let place = {};
   place.name = $('#place-name').text();
   place.address = $('#place-address').text();
-  // $('#restaurantName').val('');
-  // $('#restaurantAddress').val('');
   $('#restaurantName').val(place.name);
   $('#restaurantAddress').val(place.address);
 };

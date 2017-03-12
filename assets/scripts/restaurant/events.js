@@ -49,9 +49,6 @@ const deleteRest = (id) => {
 
 
 const addHandlers = () => {
-  // $('#create-restaurant').off('submit', onCreateRest);
-  // $('#restaurant-lister').off('click', onListRest);
-  // $('.restaurant-trash-icon').off('click', deleteRest);
   $('#create-restaurant').on('submit', onCreateRest);
   $('#restaurant-lister').on('click', onListRest);
   $('.restaurant-trash-icon').on('click', deleteRest);
