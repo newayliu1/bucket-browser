@@ -27,7 +27,6 @@ header {
   width: 100%;
 }
 
-
 .landing-image {
   background-image: url('https://raw.githubusercontent.com/Squad-SOL/bucket-browser/master/assets/bucketlanding.png');
   background-size: 100%;
@@ -55,9 +54,86 @@ header {
   width: 89px;
 }
 
+.btn {
+  background-color: $off-white !important;
+  border: 1px solid $dark-color !important;
+  border-radius: 0;
+  color: $dark-color !important;
+  padding: 2px !important;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+}
+
+.btn:hover {
+  background-color: $accent-color !important;
+  border: 1px solid $dark-color !important;
+  color: $dark-color !important;
+}
+
+.btn:active {
+  background-color: $accent-color !important;
+  border: 1px solid $dark-color  !important;
+  color: $dark-color  !important;
+}
+
 .button-holder {
   float: right;
+  height: 100px;
+  margin-right: 4px;
+  padding-top: 33px;
 }
+
+// is the actual button (not the dropdown part)
+.dropdown-toggle {
+  background-color: $off-white;
+  border: 1px solid $dark-color;
+  color: $dark-color;
+  margin-top: 2px;
+}
+
+// background top and bottom of button dropdowns
+.dropdown-menu {
+  background-color: $off-white;
+  border-radius: 0;
+  color: $dark-color;
+}
+
+// middle of dropdown menu background/font
+fieldset {
+  background-color: $off-white;
+  color: $dark-color;
+}
+
+
+
+// is the input text fields and buttons (e.g. email, password, "sign in" button inside dropdown menu)
+input, textarea {
+  background-color: $off-white !important;
+  border: 1px solid $dark-color !important;
+  color: $dark-color !important;
+  float: right !important;
+  padding: 2px !important;
+  border-radius: 0 !important;
+}
+
+hr {
+  -moz-border-bottom-colors: none;
+  -moz-border-image: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-color: $dark-color;
+  border-style: $dark-color solid none;
+  border-width: 1px 0;
+  margin: 2px;
+  margin-top: 8px;
+}
+
+// padding to either side of the inputs in dropdown-menus
+// form {
+//   padding-left: 2px !important;
+//   padding-right: 2px !important;
+// }
 
 #map {
   border: 8px solid $accent-color;
@@ -110,11 +186,20 @@ header {
 
 .create-button {
   margin-top: 8px;
+  background-color: $off-white !important;
+  border: 1px solid $dark-color !important;
+  color: $dark-color !important;
+  float: right !important;
+  padding: 2px !important
 }
 
-.get-from-map-button {
-  margin: 2px;
-  margin-bottom: 4px;
+.get-from-map-button > button {
+  margin-top: 8px;
+  margin-left: 8px;
+  background-color: $off-white !important;
+  border: 1px solid $dark-color !important;
+  color: $dark-color !important;
+  padding: 2px !important
 }
 
 .save-restaurant-message {

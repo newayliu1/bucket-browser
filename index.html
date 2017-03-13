@@ -23,7 +23,7 @@
 <body class="container-fluid">
   <header>
 
-    <div class="logo">
+    <div class="logo ">
     <img src="https://raw.githubusercontent.com/Squad-SOL/bucket-browser/master/assets/bucketlogo.png" alt="FeedBucket Logo" class="logo-image">
     </div>
     <div class="button-holder" id="waiting-options">
@@ -94,7 +94,7 @@
               </label>
             </div>
             <p class="change-pw-message"></p>
-            <input class="close-dropdown" type="submit" name="submit" value="Change Password!">
+            <input class="close-dropdown change-password" type="submit" name="submit" value="Change Password!">
           </fieldset>
           <hr>
           <p class="sign-out-message"></p>
@@ -139,8 +139,8 @@
             <label for="restaurant-notes">Notes:</label>
             <textarea class="form-control restaurants-input" name="restaurant[notes]" placeholder="Recommended by mom..." rows="4"></textarea>
           </div>
-          <div class="restaurant-input-field create-button">
-            <input type="submit" name="submit" value="Save to My List!">
+          <div class="restaurant-input-field">
+            <input class="create-button" type="submit" name="submit" value="Save to My List!">
           </div>
         </div>
       </form>
@@ -149,10 +149,12 @@
       </div>
     </div>
   </div>
+
   <div class="restaurant-list-holder">
     <div class="restaurant-list">
     </div>
   </div>
+
   <div id="infowindow-content">
     <span id="place-name"  class="title"></span><br>
     <!-- <span id="place-id"></span><br> -->
@@ -160,6 +162,9 @@
     <div id="rating"></div>
     <div id="price-rating"></div>
   </div>
+
+  <footer>&copy; 2017 Squad SOL - All Rights Reserved</footer>
+
 </body>
-<footer>&copy; 2017 Squad SOL - All Rights Reserved</footer>
+
 </html>
