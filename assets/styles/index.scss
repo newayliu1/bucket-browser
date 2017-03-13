@@ -1,6 +1,5 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
-
 $main-color: #fe7443;
 $accent-color: #aaa7a3;
 $off-white: #f6f6f6;
@@ -33,7 +32,6 @@ header {
   background-position: center center;
   background-repeat: no-repeat;
   border: 8px solid $accent-color;
-
   float: left;
   height: 500px;
   margin: 16px;
@@ -60,8 +58,8 @@ header {
   border-radius: 0;
   color: $dark-color !important;
   padding: 2px !important;
-  -webkit-transition-duration: .2s;
-  transition-duration: .2s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
 }
 
 .btn:hover {
@@ -72,8 +70,8 @@ header {
 
 .btn:active {
   background-color: $accent-color !important;
-  border: 1px solid $dark-color  !important;
-  color: $dark-color  !important;
+  border: 1px solid $dark-color !important;
+  color: $dark-color !important;
 }
 
 .button-holder {
@@ -82,7 +80,6 @@ header {
   margin-right: 4px;
   padding-top: 33px;
 }
-
 // is the actual button (not the dropdown part)
 .dropdown-toggle {
   background-color: $off-white;
@@ -90,22 +87,20 @@ header {
   color: $dark-color;
   margin-top: 2px;
 }
-
 // background top and bottom of button dropdowns
 .dropdown-menu {
   background-color: $off-white;
   border-radius: 0;
   color: $dark-color;
 }
-
 // middle of dropdown menu background/font
 fieldset {
   background-color: $off-white;
   color: $dark-color;
 }
-
 // is the input text fields and buttons (e.g. email, password, "sign in" button inside dropdown menu)
-input, textarea {
+input,
+textarea {
   background-color: $off-white !important;
   border: 1px solid $dark-color !important;
   color: $dark-color !important;
@@ -123,10 +118,8 @@ hr {
   border-color: $dark-color;
   border-style: $dark-color solid none;
   border-width: 1px 0;
-  margin: 2px;
-  margin-top: 8px;
+  margin: 8px 2px 2px;
 }
-
 // padding to either side of the inputs in dropdown-menus
 // form {
 //   padding-left: 2px !important;
@@ -144,7 +137,25 @@ hr {
 }
 
 #pac-input {
+  background-color: #fff;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  height: 29px;
+  margin-left: 17px;
+  margin-top: 10px;
+  outline: none;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
   width: 300px;
+}
+
+.title {
+  font-weight: bold;
 }
 
 .restaurant-wrapper {
@@ -188,7 +199,7 @@ hr {
   border: 1px solid $dark-color !important;
   color: $dark-color !important;
   float: right !important;
-  padding: 2px !important
+  padding: 2px !important;
 }
 
 .get-from-map-button > button {
@@ -197,7 +208,7 @@ hr {
   background-color: $off-white !important;
   border: 1px solid $dark-color !important;
   color: $dark-color !important;
-  padding: 2px !important
+  padding: 2px !important;
 }
 
 .save-restaurant-message {
